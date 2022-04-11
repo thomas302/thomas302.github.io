@@ -14,9 +14,11 @@
   width: 90vw;
   border-radius: 2vw;
 }
+
 .c-text{
   text-align: center;
 }
+
 .options{
   margin-left: 5vw;
   padding-bottom: 2vh;
@@ -29,7 +31,6 @@
 }
 #qrcode img{
   max-width: 3in;
-  width: 80vw;
 }
 
 .button{

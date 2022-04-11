@@ -7,6 +7,7 @@ $(document).ready(function(){
         colorLight : "#ffffff",
         correctLevel : QRCode.CorrectLevel.H
     })
+    generateQR();
 })
 
 jQuery($ => {

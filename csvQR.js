@@ -1,8 +1,8 @@
 $(document).ready(function(){
     window.qrcode = new QRCode("qrcode", 
         {
-        width: 500,
-        height: 500,
+        width: 800,
+        height: 800,
         colorDark : "#000000",
         colorLight : "#ffffff",
         correctLevel : QRCode.CorrectLevel.H

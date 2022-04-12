@@ -5,7 +5,7 @@
   <link href="main.css" rel="stylesheet">
   <script src="jquery.min.js"></script>
   <script src="jquery-ui.min.js"></script>
-  <script src="qrcodemin.js"></script>
+  <script src="qrcode.js"></script>
   <script src="form-builder.min.js"></script>
   <script src="form-render.min.js"></script>
   <script src="csvQR.js"></script>
@@ -428,7 +428,27 @@
       <button id="saveData" type="button" class="button">Generate QR Code</button>
       <button id="reset" type="button" class="button">Reset</button>
     </div>
-    <div id="qrcode">
+    <div id="qrs">
+      <div>
+        <h3>Data</h3>
+        <div id="qrcode" class="qr">
+        </div>
+      </div>
+      <div>
+        <h3>Defense Comments</h3>
+        <div id="defense" class="qr">
+        </div>
+      </div>
+      <div>
+        <h3>Catastrophe Comments</h3>
+        <div id="cat" class="qr">
+        </div>
+      </div>
+      <div>
+        <h3>Other Comments</h3>
+        <div id="other" class="qr">
+        </div>
+      </div>
     </div>
   </div>
 </body>

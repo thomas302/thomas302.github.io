@@ -1,19 +1,12 @@
 $(document).ready(function(){
-    window.qrcode = new QRCode("qrcode", 
-        {
-        width: 800,
-        height: 800,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-    })
-    generateQR();
+    generateDataQR();
+    generateCommentsQR();
 })
 
 jQuery($ => {
     document
       .getElementById("saveData")
-      .addEventListener("click", () => generateQR());
+      .addEventListener("click", () => generateDataQR());
 
     document
         .getElementById("reset")
@@ -24,12 +17,37 @@ formReset = function(){
     $( '#rendered-form' ).each(function(){
         this.reset();
     });
-    window.qrcode.empty()
+    $('#qrcode').empty()
 }
 
-generateQR = function(){
+generateDataQR = function(){
     s = getData()
-    window.qrcode.makeCode(s);
+    var typeNumber = 10;
+    var errorCorrectionLevel = 'L';
+    var qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData(s);
+    qr.make();
+    document.getElementById('qrcode').innerHTML = qr.createSvgTag();
+}
+
+generateCommentsQR = function(){
+    var typeNumber = 10;
+    var errorCorrectionLevel = 'L';
+    
+    var qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData(getDefenseComments());
+    qr.make();
+    document.getElementById('defense').innerHTML = qr.createSvgTag();
+
+    var qr1 = qrcode(typeNumber, errorCorrectionLevel);
+    qr1.addData(getCatastropheComments());
+    qr1.make();
+    document.getElementById('cat').innerHTML = qr.createSvgTag();
+
+    var qr2 = qrcode(typeNumber, errorCorrectionLevel);
+    qr2.addData(getOtherComments());
+    qr2.make();
+    document.getElementById('other').innerHTML = qr.createSvgTag();
 }
 
 getData = function(){

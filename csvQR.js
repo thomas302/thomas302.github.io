@@ -64,13 +64,10 @@ getData = function(){
     vals.push(getTeleLowGoal())
     vals.push(getStoppedFromScoring())
     vals.push(getDefense())
-    vals.push(getDefenseComments())
     vals.push(getShootingEndgame())
     vals.push(getClimbLevel())
     vals.push(getCatastrophe())
-    vals.push(getCatastropheComments())
     vals.push(getFocus())
-    vals.push(getOtherComments())
 
     return vals.join(";")
 }

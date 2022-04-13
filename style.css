@@ -37,30 +37,30 @@
 }
 
 #qrcode svg{
-  width: 800px;
+  width: 80vw;
   max-width: 3in;
-  height: 800px;
+  height: 80vw;
   max-height: 3in;
 }
 
 #defense svg{
-  width: 800px;
+  width: 80vw;
   max-width: 3in;
-  height: 800px;
+  height: 80vw;
   max-height: 3in;
 }
 
 #cat svg{
-  width: 800px;
+  width: 80vw;
   max-width: 3in;
-  height: 800px;
+  height: 80vw;
   max-height: 3in;
 }
 
 #other svg{
-  width: 800px;
+  width: 80vw;
   max-width: 3in;
-  height: 800px;
+  height: 80vw;
   max-height: 3in;
 }
 

@@ -21,7 +21,9 @@ formReset = function(){
 
 generateQR = function(){
     generateDataQR()
-    generateCommentsQR()
+    generateDefenseQR()
+    generateCatastropheQR()
+    generateOtherQR()
 }
 
 generateDataQR = function(){
@@ -34,23 +36,31 @@ generateDataQR = function(){
     document.getElementById('qrcode').innerHTML = qr.createSvgTag();
 }
 
-generateCommentsQR = function(){
+generateDefenseQR = function(){
     var typeNumber = 10;
     var errorCorrectionLevel = 'L';
-    
     var qr = qrcode(typeNumber, errorCorrectionLevel);
+
     qr.addData(getDefenseComments());
     qr.make();
     document.getElementById('defense').innerHTML = qr.createSvgTag();
+}
 
-    var qr1 = qrcode(typeNumber, errorCorrectionLevel);
-    qr1.addData(getCatastropheComments());
-    qr1.make();
+generateCatastropheQR = function(){
+    var typeNumber = 10;
+    var errorCorrectionLevel = 'L';
+    var qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData(getCatastropheComments());
+    qr.make();
     document.getElementById('cat').innerHTML = qr.createSvgTag();
+}
 
-    var qr2 = qrcode(typeNumber, errorCorrectionLevel);
-    qr2.addData(getOtherComments());
-    qr2.make();
+generateOtherQR = function(){
+    var typeNumber = 10;
+    var errorCorrectionLevel = 'L';
+    var qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData(getOtherComments());
+    qr.make();
     document.getElementById('other').innerHTML = qr.createSvgTag();
 }
 

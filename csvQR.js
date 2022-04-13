@@ -1,15 +1,5 @@
 $(document).ready(function(){
     generateQR()
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
-    (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform))) {
-        
-    }
-    else{
-        $('#other svg').css({'max-width': "3in", 'max-height': "3in"})
-        $('#qrcode svg').css({'max-width': "3in", 'max-height': "3in"})
-        $('#cat svg').css({'max-width': "3in", 'max-height': "3in"})
-        $('#defense svg').css({'max-width': "3in", 'max-height': "3in"})
-    }
 })
 
 jQuery($ => {
@@ -34,6 +24,16 @@ generateQR = function(){
     generateDefenseQR()
     generateCatastropheQR()
     generateOtherQR()
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
+    (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform))) {
+        
+    }
+    else{
+        $('#other svg').css({'max-width': "3in", 'max-height': "3in"})
+        $('#qrcode svg').css({'max-width': "3in", 'max-height': "3in"})
+        $('#cat svg').css({'max-width': "3in", 'max-height': "3in"})
+        $('#defense svg').css({'max-width': "3in", 'max-height': "3in"})
+    }
 }
 
 generateDataQR = function(){

@@ -1,12 +1,11 @@
 $(document).ready(function(){
-    generateDataQR();
-    generateCommentsQR();
+    generateQR()
 })
 
 jQuery($ => {
     document
       .getElementById("saveData")
-      .addEventListener("click", () => generateDataQR());
+      .addEventListener("click", () => generateQR());
 
     document
         .getElementById("reset")
@@ -18,6 +17,11 @@ formReset = function(){
         this.reset();
     });
     $('#qrcode').empty()
+}
+
+generateQR = function(){
+    generateDataQR()
+    generateCommentsQR()
 }
 
 generateDataQR = function(){

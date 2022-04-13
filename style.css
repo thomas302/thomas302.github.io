@@ -3,7 +3,7 @@
 }
 .form {
   min-width: 50vw;
-  max-width: 80vw;
+  max-width: 800px;
   margin-left: 5vw;
   margin-right: 5vw;
 }
@@ -37,31 +37,23 @@
 }
 
 #qrcode svg{
-  width: 80vw;
-  max-width: 3in;
-  height: 80vw;
-  max-height: 3in;
+  width: 800px;
+  height: 800px;
 }
 
 #defense svg{
-  width: 80vw;
-  max-width: 3in;
-  height: 80vw;
-  max-height: 3in;
+  width: 800px;
+  height: 800px;
 }
 
 #cat svg{
-  width: 80vw;
-  max-width: 3in;
-  height: 80vw;
-  max-height: 3in;
+  width: 800px;
+  height: 800px;
 }
 
 #other svg{
-  width: 80vw;
-  max-width: 3in;
-  height: 80vw;
-  max-height: 3in;
+  width: 800px;
+  height: 800px;
 }
 
 .button{

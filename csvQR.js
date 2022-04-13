@@ -28,7 +28,7 @@ generateQR = function(){
 
 generateDataQR = function(){
     s = getData()
-    var typeNumber = 10;
+    var typeNumber = 20;
     var errorCorrectionLevel = 'L';
     var qr = qrcode(typeNumber, errorCorrectionLevel);
     qr.addData(s);
@@ -37,7 +37,7 @@ generateDataQR = function(){
 }
 
 generateDefenseQR = function(){
-    var typeNumber = 10;
+    var typeNumber = 20;
     var errorCorrectionLevel = 'L';
     var qr = qrcode(typeNumber, errorCorrectionLevel);
 
@@ -47,7 +47,7 @@ generateDefenseQR = function(){
 }
 
 generateCatastropheQR = function(){
-    var typeNumber = 10;
+    var typeNumber = 20;
     var errorCorrectionLevel = 'L';
     var qr = qrcode(typeNumber, errorCorrectionLevel);
     qr.addData(getCatastropheComments());
@@ -56,7 +56,7 @@ generateCatastropheQR = function(){
 }
 
 generateOtherQR = function(){
-    var typeNumber = 10;
+    var typeNumber = 20;
     var errorCorrectionLevel = 'L';
     var qr = qrcode(typeNumber, errorCorrectionLevel);
     qr.addData(getOtherComments());

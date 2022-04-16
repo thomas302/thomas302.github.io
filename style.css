@@ -6,7 +6,7 @@
   max-width: 800px;
   margin-left: 5vw;
   margin-right: 5vw;
-  font-size: 1.5em;
+  font-size: 10em;
 }
 .box{
   background-color: #ffffff;
@@ -112,8 +112,4 @@
 
 .button:-webkit-details-marker {
   display: none;
-}
-
-#matchNo {
-  font-size: 3vw;
 }

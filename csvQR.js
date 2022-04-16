@@ -1,5 +1,6 @@
 $(document).ready(function(){
     generateQR()
+    freshStyle("style.css")
 })
 
 jQuery($ => {
@@ -19,6 +20,9 @@ formReset = function(){
     $('#qrcode').empty()
 }
 
+function freshStyle(stylesheet){
+   $('link').attr('href',stylesheet);
+}
 generateQR = function(){
     generateDataQR()
     generateDefenseQR()

@@ -112,3 +112,7 @@
 .button:-webkit-details-marker {
   display: none;
 }
+
+input {
+  font-size: 18;
+}

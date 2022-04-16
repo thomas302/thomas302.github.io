@@ -114,6 +114,6 @@
   display: none;
 }
 
-input {
-  font-size: 1vw;
+#matchNo {
+  font-size: 3vw;
 }

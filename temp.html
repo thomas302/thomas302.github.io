@@ -1,0 +1,45 @@
+<form>
+    <div class="slider">
+        <label class="label"></label>
+        <div class="slider-container" style="width:fit-content;">
+        <input type="range" id="volume" name="volume" min="1" max="5" value="3" step="1">
+        <div class="tick-container">
+            <div class="tick-label">1</div>
+            <div class="tick-label">2</div>
+            <div class="tick-label">3</div>
+            <div class="tick-label">4</div>
+            <div class="tick-label">5</div>
+        </div>
+        </div>
+    </div>
+  </form>
+  
+
+<style>
+  .slider-container {
+    position: relative;
+    width:100%;
+  }
+  .tick-container {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+  }
+  .tick-label {
+    width: 20%;
+    text-align: center;
+  }
+</style>
+
+  
+  <script>
+    function outputUpdate(vol) {
+      document.querySelector('#volume-output').value = vol;
+    }
+  </script>
+  

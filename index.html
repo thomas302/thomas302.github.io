@@ -258,7 +258,24 @@
         </div>
         <br/>
     </div>
-    <h2>Comments</h2>
+    <h2 class="c-text">Endgame</h2>
+    <div class="radio-group">
+      <label class="label">Dock</label><br/>
+      <input class="radio" id="dock-2" name="endDock" type="radio" value = "1" font-size="30pt"/>
+      <label class="sub_label" for="dock-2">Yes</label> <br/>
+      <input class="radio" id="dock-3" name="endDock" type="radio" value = "0" font-size="30pt"/>
+      <label class="sub_label" for="dock-3">No</label> <br/>
+    </div>
+    <br/>
+    <div class="radio-group">
+      <label class="label">Engage</label><br/>
+      <input class="radio" id="engage-3" name="endEngage" type="radio" value = "1" font-size="30pt"/>
+      <label class="sub_label" for="engage-3">Yes</label> <br/>
+      <input class="radio" id="engage-4" name="endEngage" type="radio" value = "0" font-size="30pt"/>
+      <label class="sub_label" for="engage-4">No</label> <br/>
+    </div>
+    <br/>
+    <h2 class="c-text">Comments</h2>
     <div id = "comments">
       <label class="label">Defense Comments</label>
       <input class="T_input" id="defense" name="defense" type="text" value = "" font-size="30pt"/> <br/>
@@ -277,6 +294,7 @@
     <div id="qrs">
       <div class="test">
         <h3>Data</h3>
+        <input class="T_input" id="data" value="No Data" readonly>
         <div id="qrcode" class="qr">
         </div>
       </div>

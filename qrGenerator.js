@@ -12,8 +12,12 @@ getData = function(){
     vals.push(getGroundPickup())
     vals.push(getSubstationPickup())
     vals.push(getPickupPreference())
+    vals.push(getEndDock())
+    vals.push(getEndEngage())
+    vals.push(getLinks())
+    //vals.push(getPlacementRate())
 
-    out = vals.join(";")
+    out = vals.join(",")
     console.log(out)
     return out
 }
@@ -54,6 +58,21 @@ getPickupPreference= function(){
     return $("input[name='IntakePreference']:checked").val()
 }
 
+getLinks = function(){
+    const auto = getAutoPlacement().split(',').map((x)=>parseInt(x))
+    const tele = getTelePlacement().split(',').map((x)=>parseInt(x))
+
+    const grid = auto.map((n, i)=> n + tele[i])
+
+    low = Math.floor((grid[2]+grid[7])/3)
+
+    mid = Math.floor((grid[8]/2 + grid [3])/2)
+
+    high = Math.floor((grid[9]/2 + grid [4])/2)
+
+    return low + mid + high
+}
+
 getAutoPlacement= function (){
     const auto = document.querySelector('#Auto')
     const a_cubeContainer = auto.querySelector('#cube_placement')
@@ -70,7 +89,7 @@ getAutoPlacement= function (){
     placement.push(a_coneContainer.querySelector("#low").value)
     placement.push(a_coneContainer.querySelector("#mid").value)
     placement.push(a_coneContainer.querySelector("#high").value)
-    out = placement.join(";")
+    out = placement.join(",")
     //console.log(out)
     return out
 }
@@ -92,10 +111,32 @@ getTelePlacement = function (){
     vals.push(t_coneContainer.querySelector("#mid").value)
     vals.push(t_coneContainer.querySelector("#high").value)
 
-    out = vals.join(";")
+    out = vals.join(",")
     //console.log(out)
     return out
 
+}
+/*
+getConePlacementRates = function(){
+    const auto = document.querySelector('#Auto')
+    const a_cubeContainer = auto.querySelector('#cube_placement')
+    const a_coneContainer = auto.querySelector('#cone_placement')
+
+    const tele = document.querySelector('#Tele')
+    const t_cubeContainer = tele.querySelector('#cube_placement')
+    const t_coneContainer = tele.querySelector('#cone_placement')
+
+    cube_pickup = parseInt(a_cubeContainer.querySelector('#pickup').value) + parseInt(t_cubeContainer.querySelector('#pickup').value)
+    cube_dropped = parseInt(a_cubeContainer.querySelector('#dropped').value) + parseInt(t_cubeContainer.querySelector('#dropped').value)
+
+    cone_pickup = parseInt(a_coneContainer.querySelector('#pickup').value) + parseInt(t_coneContainer.querySelector('#pickup').value)
+    cone_dropped = parseInt(a_coneContainer.querySelector('#dropped').value) + parseInt(t_coneContainer.querySelector('#dropped').value)
+
+    return (1- cube_dropped/cube_pickup), (1 - cone_dropped/cone_pickup)
+}
+*/
+getEndEngage = function(){
+    return $("input[type='radio'][name='endEngage']:checked").val()
 }
 
 getEndDock = function(){
@@ -135,6 +176,7 @@ function generateGeneral(){
 
 function generateDataQR(){
     s = getData()
+    document.getElementById('data').value = s;
     var typeNumber = 15;
     var errorCorrectionLevel = 'L';
     var qr = qrcode(typeNumber, errorCorrectionLevel);
